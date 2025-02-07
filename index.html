@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file sender</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .dark-container {
+            background-color: #1e1e1e;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .dark-input {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border: 1px solid #3c3c3c;
+            transition: all 0.3s ease;
+        }
+        .dark-input:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74,144,226,0.3);
+        }
+        .send-button {
+            background: linear-gradient(to right, #4a90e2, #2c3e50);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .send-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(74,144,226,0.3);
+        }
+        .file-input {
+            background-color: #2c2c2c;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="dark-container p-8 w-96 rounded-3xl">
+        <h2 class="text-3xl font-bold text-center text-gray-100 mb-6">SendFiles</h2>
+        <div class="space-y-4">
+            <input 
+                type="email" 
+                id="toEmail" 
+                placeholder="Recipient Email" 
+                class="dark-input w-full px-4 py-3 rounded-xl"
+            >
+            <input 
+                type="text" 
+                id="subject" 
+                placeholder="Subject" 
+                class="dark-input w-full px-4 py-3 rounded-xl"
+            >
+            <textarea 
+                id="message" 
+                placeholder="Message" 
+                class="dark-input w-full px-4 py-3 rounded-xl h-32"
+            ></textarea>
+            <div class="file-input p-3 rounded-xl">
+                <label class="block text-sm text-gray-400 mb-2">Attachment (Optional)</label>
+                <input 
+                    type="file" 
+                    id="attachment" 
+                    class="w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:bg-blue-900 file:text-blue-300"
+                >
+            </div>
+            <button 
+                onclick="sendEmail()" 
+                class="send-button w-full text-white py-3 rounded-xl hover:scale-105 focus:outline-none"
+            >
+                Send Email
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
