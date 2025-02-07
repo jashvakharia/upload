@@ -20,3 +20,19 @@ A simple and dynamic web application for sending files to your own/someone's ema
 
 - [phpmailer](https://github.com/PHPMailer/PHPMailer)
 
+
+## Setup
+
+Update these lines in `send_email.php` with your values.
+
+```bash
+  $mail->Host = 'smtp.example.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'contact@example.com';
+        $mail->Password = 'example123@';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+
+        $mail->setFrom('contact@example.com', 'Jash Vakharia');
+```
+    
